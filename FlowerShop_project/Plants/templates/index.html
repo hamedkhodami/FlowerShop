@@ -1,0 +1,88 @@
+{% extends "layoutmain.html" %}
+
+{% block titlePlants %}
+صفحه اصلی
+{% endblock %}
+
+{% block bodyplant %}
+  <section class="shop_section layout_padding">
+    <div class="container">
+      <div class="box">
+        <div class="detail-box">
+          <h2>
+            فروشگاه گیاهان های خانگی
+          </h2>
+          <p>
+            در اینجا گیاهان های زیادی برای زیباتر شدن زندگی شما وجود دارد
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- end shop section -->
+
+  <!-- about section -->
+
+  <section class="about_section">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-6 px-0">
+          <div class="img-box">
+            <img src="static/images/aboutt-img.jpg" alt="">
+          </div>
+        </div>
+        <div class="col-md-5">
+          <div class="detail-box">
+            <div class="heading_container">
+              <hr>
+              <h2>
+                نحوه ی خرید هر یک از محصولات
+              </h2>
+            </div>
+            <p>
+              قیمت هر یک از محصولات به روز می باشد و با خرید شما می توانید فقط یک بوته را خریداری کنید در صورت نیاز به بوته های بیشتر شما می توانید چندبار محصول مورد نظر خود را خریداری کنید
+            </p>
+            <a href="{% url 'about' %}">
+              اطلاعات بیشتر در مورد فروشگاه ما
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- end about section -->
+
+  <!-- fruit section -->
+
+  <section class="fruit_section layout_padding">
+    <div class="container">
+      <div class="heading_container">
+        <div class="box text-right">
+          <div class="link_box">
+            <h5>
+              {% for item in plants %}
+                  <h3>  نام گیاه: {{ item.name }}</h3>
+                  <img src="{{ item.image.url }}" class="rounded-circle" alt="{{ item.name }}">
+                  <P class="container p-3 my-3 border">{{ item.description }}</P>
+                  <P>  قیمت : {{ item.price }}</P>
+                  <a href="/Carts/" class="btn btn-outline-primary ">
+                  رفتن به فروشگاه
+                  </a>
+
+                  <br/>
+                  <br/>
+                  <br/>
+                  <br/>
+              {% endfor %}
+            </h5>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- end fruit section -->
+
+{% endblock %}

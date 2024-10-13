@@ -1,0 +1,52 @@
+{% extends "layoutmain.html" %}
+
+{% block titlePlants %}
+صفحه سبد خرید
+{% endblock %}
+
+{% block bodyplant %}
+
+
+  <!-- fruit section -->
+
+  <section class="fruit_section layout_padding">
+    <div class="container">
+      <div class="heading_container">
+        <hr>
+        <h2>
+          محصولات
+        </h2>
+      </div>
+      <div class="form-inline">
+        <div class="form-group text-right">
+          <form method="GET" action="">
+              <input type="text" class="form-control form-control-lg" name="q" id="usr">
+              <button type="submit" class="btn btn-dark">جستوجو</button>
+          </form>
+        </div>
+      </div>
+    <div>
+    <div class="container-fluid">
+
+      <div class="fruit_container">
+        {% for item in plants %}
+        <div class="box">
+          <img src="{{ item.image.url }}" alt="{{ item.name }}">
+          <div class="link_box">
+            <h3>
+              {{ item.name }}
+            </h3>
+            <p>قیمت:  {{ item.price }}  تومان</p>
+            <a href="{% url 'add_to_cart' item.id %}">
+              خرید
+            </a>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  <!-- end fruit section -->
+
+{% endblock %}

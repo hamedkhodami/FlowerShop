@@ -1,0 +1,41 @@
+{% extends "_layout.html" %}
+
+{% block title %}
+ صفحه ورود
+{% endblock %}
+
+{% block title_form %}
+<h3 class="mm text-center mb-5"> به  <strong>  آشیانه سبز</strong>خوش آمدید</h3>
+{% endblock %}
+
+{% block forms %}
+
+            <form action="loginUserInWeb" method="post">
+                {% if success %}
+                    <div class="alert alert-success text-center container pt-3 pr-20">{{ success }}</div>
+                {% endif %}
+                {% csrf_token %}
+                  {% for item in form %}
+                  <div class="form-group first text-right">
+                    {{ item.label_tag }}
+                    {{ item }}
+                  </div>
+                  {% endfor %}
+
+                  <div class="d-flex mb-5 align-items-center">
+                    <span class="ml-auto"><a href="{% url 'ForgetPassword' %}" class="forgot-pass">رمز عبور خود را فراموش کرده اید؟</a></span>
+                  </div>
+
+                  <input type="submit" value=" ورود " class="btn btn-block btn-primary">
+                  <span class="text-center my-3 d-block"> یا </span>
+                  <div>
+                    <a href="register" class="btn btn-block btn-success">
+                      ثبت نام
+                    </a>
+                  </div>
+            </form>
+
+            {% if error %}
+                <div class="alert alert-danger">{{ error }}</div>
+            {% endif %}
+{% endblock %}

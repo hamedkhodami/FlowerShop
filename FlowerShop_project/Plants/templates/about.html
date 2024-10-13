@@ -1,0 +1,47 @@
+{% extends "layoutmain.html" %}
+
+{% block titlePlants %}
+درباره ی ما
+{% endblock %}
+
+{% block bodyplant %}
+
+  <section class="about_section">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-6 px-0">
+          <div class="img-box">
+            <video autoplay controls width="700" height="400"><source src="static/videos/aboutvideo.mp4" type="video/mp4" />
+            </video>
+          </div>
+        </div>
+        <div class="col-md-5" >
+          <div class="detail-box text-right" >
+            <div class="heading_container"  >
+              <h2>
+                درباره ی فروشگاه گیاهان خانگی ما
+              </h2>
+            </div>
+            <p>
+                این فروشگاه در سال 1403 تاسیس شد مرکز اصلی این فروشگاه در <strong> استان کرمان شهرستان بردسیر </strong>قرار دارد اما شما میتوانید محصول  خود را سفارش دهید و محصوص خود را بعد از سه روز درب منزل خود دریافت کنید
+            </p>
+            <p>
+                <strong>نحوه ی پرداخت </strong>
+            </p>
+            <p>
+                نحوه پرداخت ما به ااین صورت میباشد که شما درب منزل در صورت رضایت مبلغ خود را پرداخت کنید و همچنین می توانید با مراجعه حضوری از تخفیفات ویژه برخوردار شوید
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+          <div class="container-fluid col-md-6 px-0 mr-100" >
+            <div class="map_container">
+              <div class="map-responsive">
+                <iframe src="https://www.google.com/maps/embed/v1/place?key=AIzaSyA0s1a7phLN0iaD6-UE7m4qP-z21pH0eSc&q=bardsir+kerman+iran" width="600" height="300" frameborder="0" style="border:0; width: 100%; height:100%" allowfullscreen></iframe>
+              </div>
+            </div>
+          </div>
+{% endblock %}

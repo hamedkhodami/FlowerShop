@@ -1,0 +1,21 @@
+{% extends "_layout.html" %}
+
+{% block title %}
+صفحه فراموشی رمز عبور
+{% endblock %}
+
+{% block forms %}
+    <h2 class="text-center">نام کاربری و رمز عبور خود را وارد کنید تا رمز عبور برای شما ارسال گردد </h2>
+    <br/>
+    <br/>
+    <br/>
+    <div class="form-group text-right">
+      <label for="usr">نام کاربری :</label>
+      <input type="text" class="form-control" id="usr">
+    </div>
+    <div class="form-group text-right">
+      <label for="pwd">ایمیل:</label>
+      <input type="password" class="form-control" id="pwd">
+    </div>
+    <button class="btn btn-warning"> در خواست رمز مجدد </button>
+{% endblock %}

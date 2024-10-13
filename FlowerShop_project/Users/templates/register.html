@@ -1,0 +1,32 @@
+{% extends "_layout.html" %}
+
+
+{% block title_form %}
+<h3 class="mm text-center mb-2"> به  <strong>  آشیانه سبز</strong>  بپیوندید   </h3>
+{% endblock %}
+
+{% block forms %}
+                {% if success %}
+                    <div class="alert alert-success text-center container pt-3 pr-20">{{ success }}</div>
+                {% endif %}
+            <form action="registerAction" method="post">
+                {% csrf_token %}
+                  {% for item in form %}
+                  <div class="form-group first text-right">
+                    {{ item.label_tag }}
+                    {{ item }}
+                  </div>
+                  {% endfor %}
+
+
+                  <input type="submit" value=" ثبت نام " class="btn btn-block btn-primary">
+                  <div>
+                    <a href="/Users" class="btn btn-block btn-success">
+                      ورود
+                    </a>
+                  </div>
+            </form>
+            {% if error %}
+                <div class="alert alert-danger">{{ error }}</div>
+            {% endif %}
+{% endblock %}

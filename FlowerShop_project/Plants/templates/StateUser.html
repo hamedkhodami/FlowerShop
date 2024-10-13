@@ -1,0 +1,17 @@
+{% extends "layoutmain.html" %}
+
+{% block titlePlants %}
+پنل کاربری
+{% endblock %}
+
+{% block bodyplant %}
+<section class="thanks layout_padding text-center">
+    <div class="container">
+        <div class="heading_container">
+            <h2>شما با نام {{ user_st.User.first_name }} {{ user_st.User.last_name }} حضور دارید</h2>
+            <h5>شما به صورت کاربر فعال در سایت حضور دارد و به راحتی می توانید خرید خود را انجام بدین و همچنین با ما در ارتباط باشید </h5>
+            <a href="/Users/LogOutUser" class="btnExist btn btn-danger" > خروج از حساب کاربری </a>
+        </div>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends "layoutmain.html" %}
+
+{% block titlePlants %}
+ورورد به درگاه پرداخت
+{% endblock %}
+
+{% block bodyplant %}
+<section class="thanks layout_padding text-center">
+    <div class="container">
+        <div class="heading_container">
+            <h2>تشکر از خرید شما</h2>
+            <h3>سفارش شما با موفقیت ثبت شد و برای پرداخت هزینه و دریافت آدرس وارد درگاه پرداخت شوید </h3>
+            <a href="{% url 'remove_from_all_cart' %}" class="btn btn-primary">درگاه پرداخت</a>
+        </div>
+    </div>
+</section>
+{% endblock %}
